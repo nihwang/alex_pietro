@@ -5,7 +5,80 @@
 @blue: #3E606F;
 @dark-blue: #193441;
 
+@font-face {
+	font-family: 'NeueHaasUnicaPro-Light';
+	src: url('../fonts/2F18C2_0_0.eot');
+	src: url('../fonts/2F18C2_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/2F18C2_0_0.woff2') format('woff2'),
+		 url('../fonts/2F18C2_0_0.woff') format('woff'),
+		 url('../fonts/2F18C2_0_0.ttf') format('truetype');
+}
+ 
+  
+@font-face {
+	font-family: 'NeueHaasUnicaPro-Regular';
+	src: url('../fonts/2F18C2_1_0.eot');
+	src: url('../fonts/2F18C2_1_0.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/2F18C2_1_0.woff2') format('woff2'),
+		 url('../fonts/2F18C2_1_0.woff') format('woff'),
+		 url('../fonts/2F18C2_1_0.ttf') format('truetype');
+}
+ 
+html {
+	font-family: NeueHaasUnicaPro-Light; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+
+p, div {
+	font-family: NeueHaasUnicaPro-Light; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { 
+	font-family: NeueHaasUnicaPro-Light; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+
+strong {
+	font-family: NeueHaasUnicaPro-Regular;
+	font-weight: bold;
+	font-style: normal;
+}
+
 body {
 	background-color: @cream;
 	background: url('../image/concrete_seamless.png')
+
+}
+
+.nav-bar {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+	border-top: 0;
+	padding-top: 1rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	background-color: @dark-blue;
+	color: white;
+	opacity: .65;
+	&.fix-top {
+		opacity: .95;
+	}
+	box-shadow: 0 8px 6px -6px black;
+	h3 {
+		margin-bottom: 1rem;
+	}
+	p {
+		margin-bottom: 2rem;
+	}
+}
+
+.photography {
+	margin-top: 10rem;
 }
