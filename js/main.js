@@ -11,10 +11,8 @@ jQuery(document).ready(function($) {
 	$('#mygallery').justifiedGallery({
 		rowHeight: 175,
 		maxRowHeight: '200%',
-		lastRow: 'nojustify',
+		// lastRow: 'nojustify',
 		margins: 10,
 		randomize: true
-	}).on('jg.complete', function() {
-		
 	});
 });
