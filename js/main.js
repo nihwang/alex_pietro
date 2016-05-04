@@ -1,13 +1,4 @@
 jQuery(document).ready(function($) {
-	$(window).scroll(function(){
-		if($(this).scrollTop() > 100) {
-			$('.nav-bar').addClass('fix-top');
-		}
-		else {
-			$('.nav-bar').removeClass('fix-top');
-		}
-	});
-
 	$('#mygallery').justifiedGallery({
 		rowHeight: 175,
 		maxRowHeight: '200%',
@@ -16,3 +7,44 @@ jQuery(document).ready(function($) {
 		randomize: true
 	});
 });
+
+var cbpAnimatedHeader = (function() {
+
+	var docElem = document.documentElement,
+		header = document.querySelector( '.cbp-af-header' ),
+		didScroll = false,
+		changeHeaderOn = 300;
+
+	function init() {
+		window.addEventListener( 'scroll', function( event ) {
+			if( !didScroll ) {
+				didScroll = true;
+				setTimeout( scrollPage, 250 );
+			}
+		}, false );
+	}
+
+	function scrollPage() {
+		var sy = scrollY();
+		if ( sy >= changeHeaderOn ) {
+			// classie.add( header, 'cbp-af-header-shrink' );
+			header.classList.add('cbp-af-header-shrink');
+		}
+		else {
+			// classie.remove( header, 'cbp-af-header-shrink' );
+			header.classList.remove('cbp-af-header-shrink');
+		}
+		didScroll = false;
+	}
+
+	function scrollY() {
+		return window.pageYOffset || docElem.scrollTop;
+	}
+
+	init();
+
+})();
+
+
+
+
