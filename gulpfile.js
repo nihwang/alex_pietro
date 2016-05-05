@@ -1,12 +1,14 @@
 var gulp       = require('gulp');  
 var less       = require('gulp-less');  
 var watch      = require('gulp-watch');
+var autoprefixer = require('gulp-autoprefixer');
 
 /* Task to compile less */
 gulp.task('compile-less', function() {  
   	gulp.src('./less/main.less')
-    	.pipe(less())
-    	.pipe(gulp.dest('./assets/dist/'));
+    	.pipe(less({compress: true}))
+    	.pipe(autoprefixer('last 10 versions', 'ie 9'))
+    	.pipe(gulp.dest('./assets/dist/'))
 });
 
 /* Task to watch less changes */
